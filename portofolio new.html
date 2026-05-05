@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Amalia Putri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --navy-deep: #0f172a;
+            --navy-light: #1e293b;
+            --accent: #38bdf8;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--navy-deep);
+            color: #f8fafc;
+        }
+
+        .navy-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .accent-text {
+            color: var(--accent);
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.3);
+        }
+
+        .nav-link {
+            position: relative;
+            color: #94a3b8;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .profile-img-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-img-container::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid var(--accent);
+            border-radius: 24px;
+            z-index: -1;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--navy-deep);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--navy-light);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+    </style>
+</head>
+<body class="selection:bg-sky-500/30 selection:text-sky-200">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-[#0f172a]/80 backdrop-blur-lg border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-xl font-bold tracking-tight accent-text">Portofolio</span>
+            <div class="hidden md:flex space-x-8 font-medium text-xs uppercase tracking-[0.2em]">
+                <a href="#home" class="nav-link">Beranda</a>
+                <a href="#about" class="nav-link">Tentang</a>
+                <a href="#projects" class="nav-link">Proyek</a>
+                <a href="#skills" class="nav-link">Keahlian</a>
+            </div>
+            <button class="md:hidden text-gray-400" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars-staggered text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#1e293b] border-b border-white/5 px-6 py-6 space-y-4">
+            <a href="#home" class="block font-medium hover:text-sky-400" onclick="toggleMenu()">Beranda</a>
+            <a href="#about" class="block font-medium hover:text-sky-400" onclick="toggleMenu()">Tentang</a>
+            <a href="#projects" class="block font-medium hover:text-sky-400" onclick="toggleMenu()">Proyek</a>
+            <a href="#skills" class="block font-medium hover:text-sky-400" onclick="toggleMenu()">Keahlian</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-6 relative overflow-hidden">
+        <!-- Background Glow -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]"></div>
+
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="text-center md:text-left order-2 md:order-1">
+                <h2 class="text-lg md:text-xl font-medium accent-text mb-4">Hai, saya Amalia Putri</h2>
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">
+                    AMALIA PUTRI <br> 
+                </h1>
+                <p class="text-lg text-slate-400 mb-8 max-w-xl">
+                    Siswi Rekayasa Perangkat Lunak di SMK Negeri 4 Batam yang antusias terhadap teknologi, pengembangan web, dan IoT.
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="https://putriajaya7-png.github.io/" target="_blank" class="px-8 py-3 bg-sky-500 text-white rounded-xl font-semibold hover:bg-sky-600 transition-all shadow-lg shadow-sky-500/20">
+                        GitHub Profile
+                    </a>
+                    <a href="#projects" class="px-8 py-3 bg-slate-800 text-white border border-white/10 rounded-xl font-semibold hover:bg-slate-700 transition-all">
+                        Lihat Karya
+                    </a>
+                </div>
+            </div>
+            
+            <!-- FOTO PROFILE -->
+            <div class="order-1 md:order-2 flex justify-center">
+                <div class="profile-img-container">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-[24px] overflow-hidden bg-slate-800 border-4 border-slate-700">
+                        <!-- Ganti URL di src dengan link foto aslimu -->
+                        <img src="https://i.ibb.co/bMhc7TXX/Whats-App-Image-2026-05-05-at-20-20-57.jpg" 
+                             alt="Amalia Putri" 
+                             class="w-full h-full object-cover"
+                             onerror="this.src='https://via.placeholder.com/400x400/1e293b/38bdf8?text=Foto+Amalia'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Saya -->
+    <section id="about" class="py-24 px-6 bg-[#0c1222]">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <div class="inline-block px-3 py-1 bg-sky-500/10 border border-sky-500/20 rounded-lg">
+                        <span class="text-xs font-bold uppercase tracking-widest accent-text">Tentang</span>
+                    </div>
+                    <h2 class="text-4xl font-bold">Siapa Saya?</h2>
+                    <p class="text-slate-400 leading-relaxed text-lg">
+                        Siswi SMK jurusan Rekayasa Perangkat Lunak yang memiliki semangat belajar tinggi, rasa ingin tahu besar, dan berani mencoba hal baru. 
+                    </p>
+                    <p class="text-slate-400 leading-relaxed text-lg">
+                        Terbiasa bekerja dalam tim, memiliki kemampuan komunikasi yang baik, serta mampu mengatur waktu dalam menyelesaikan tugas dan proyek berbasis teknologi.
+                    </p>
+                    <div class="p-6 bg-slate-800/50 border border-white/5 rounded-2xl">
+                        <h3 class="font-bold accent-text mb-2">Pendidikan</h3>
+                        <p class="font-semibold text-white">SMK Negeri 4 Batam</p>
+                        <p class="text-slate-500 text-sm italic">Rekayasa Perangkat Lunak (RPL) | 2024 – Sekarang</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="glass-card p-6 rounded-2xl flex items-center space-x-4">
+                        <div class="bg-sky-500/20 p-4 rounded-xl text-sky-400"><i class="fa-solid fa-users text-xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-white">Kepemimpinan</h4>
+                            <p class="text-slate-400 text-sm">Ketua kelompok & Moderator diskusi</p>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl flex items-center space-x-4">
+                        <div class="bg-purple-500/20 p-4 rounded-xl text-purple-400"><i class="fa-solid fa-microphone text-xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-white">Komunikasi</h4>
+                            <p class="text-slate-400 text-sm">Wawancara langsung narasumber</p>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl flex items-center space-x-4">
+                        <div class="bg-emerald-500/20 p-4 rounded-xl text-emerald-400"><i class="fa-solid fa-video text-xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-white">Media Kreatif</h4>
+                            <p class="text-slate-400 text-sm">Video Editor & Canva Designer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyek -->
+    <section id="projects" class="py-24 px-6 bg-[#0f172a]">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Pengalaman & Proyek</h2>
+                <div class="w-20 h-1 bg-sky-500 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Proyek Mobil IoT -->
+                <div class="glass-card overflow-hidden rounded-2xl group">
+                    <div class="h-48 bg-slate-800 flex items-center justify-center relative">
+                        <i class="fa-solid fa-car-side text-6xl text-sky-500/30 group-hover:scale-110 transition-transform"></i>
+                        <div class="absolute inset-0 bg-sky-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white">Proyek Mobil IoT (Tim)</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-2">Mobil berbasis IoT yang dikendalikan melalui smartphone (Perancangan & Pengujian).</p>
+                        <div class="flex items-center text-sky-400 text-xs font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-microchip mr-2"></i> IoT SYSTEM
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Presensi -->
+                <a href="https://putriajaya7-png.github.io/presensi/" target="_blank" class="glass-card overflow-hidden rounded-2xl group block">
+                    <div class="h-48 bg-slate-800 flex items-center justify-center relative">
+                        <i class="fa-solid fa-calendar-check text-6xl text-emerald-500/30 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white">Website Presensi</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-2">Sistem presensi digital berbasis web yang responsif.</p>
+                        <div class="flex items-center text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-globe mr-2"></i> LIVE PREVIEW
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Web Photobooth -->
+                <a href="https://putriajaya7-png.github.io/photoboothbyqueen/" target="_blank" class="glass-card overflow-hidden rounded-2xl group block">
+                    <div class="h-48 bg-slate-800 flex items-center justify-center relative">
+                        <i class="fa-solid fa-camera-retro text-6xl text-pink-500/30 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white">Web Photobooth</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-2">Website interaktif photobooth by Queen.</p>
+                        <div class="flex items-center text-pink-400 text-xs font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-star mr-2"></i> CREATIVE PROJECT
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Web Tema Luar Angkasa -->
+                <a href="https://putriajaya7-png.github.io/angkasa/" target="_blank" class="glass-card overflow-hidden rounded-2xl group block">
+                    <div class="h-48 bg-slate-800 flex items-center justify-center relative">
+                        <i class="fa-solid fa-user-astronaut text-6xl text-purple-500/30 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white">Tema Luar Angkasa</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-2">Desain website dengan estetika galaksi dan luar angkasa.</p>
+                        <div class="flex items-center text-purple-400 text-xs font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-rocket mr-2"></i> FRONTEND UI
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Web Perpustakaan -->
+                <div class="glass-card overflow-hidden rounded-2xl group">
+                    <div class="h-48 bg-slate-800 flex items-center justify-center relative">
+                        <i class="fa-solid fa-book-bookmark text-6xl text-amber-500/30 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white">Web Perpustakaan</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-2">Sistem manajemen perpustakaan (Localhost development).</p>
+                        <div class="flex items-center text-amber-400 text-xs font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-database mr-2"></i> DATABASE MGMT
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web AI -->
+                <div class="glass-card overflow-hidden rounded-2xl group opacity-60">
+                    <div class="h-48 bg-slate-800 flex items-center justify-center relative">
+                        <i class="fa-solid fa-brain text-6xl text-slate-500/30"></i>
+                        <div class="absolute top-4 right-4 bg-red-500/20 text-red-400 text-[10px] px-2 py-1 rounded border border-red-500/30 font-bold uppercase">Non-Aktif</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white/70">Website AI</h3>
+                        <p class="text-slate-500 text-sm mb-4 line-clamp-2">Pengembangan AI sederhana menggunakan integrasi API.</p>
+                        <div class="flex items-center text-slate-500 text-xs font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-ban mr-2"></i> API LIMIT REACHED
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keahlian -->
+    <section id="skills" class="py-24 px-6 bg-[#0c1222]">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold mb-16 text-center">Keahlian & Tools</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                <div class="glass-card p-8 text-center rounded-3xl">
+                    <i class="fa-solid fa-code text-sky-400 text-4xl mb-4"></i>
+                    <h4 class="font-bold text-white">Programming</h4>
+                    <p class="text-xs text-slate-500 mt-2 uppercase tracking-tighter">HTML, CSS (Dev)</p>
+                </div>
+                <div class="glass-card p-8 text-center rounded-3xl">
+                    <i class="fa-solid fa-pen-nib text-pink-400 text-4xl mb-4"></i>
+                    <h4 class="font-bold text-white">Design</h4>
+                    <p class="text-xs text-slate-500 mt-2 uppercase tracking-tighter">Canva (Basic)</p>
+                </div>
+                <div class="glass-card p-8 text-center rounded-3xl">
+                    <i class="fa-solid fa-laptop-code text-indigo-400 text-4xl mb-4"></i>
+                    <h4 class="font-bold text-white">Development</h4>
+                    <p class="text-xs text-slate-500 mt-2 uppercase tracking-tighter">VS Code (Basic)</p>
+                </div>
+                <div class="glass-card p-8 text-center rounded-3xl">
+                    <i class="fa-solid fa-file-invoice text-blue-400 text-4xl mb-4"></i>
+                    <h4 class="font-bold text-white">Office</h4>
+                    <p class="text-xs text-slate-500 mt-2 uppercase tracking-tighter">MS Office (Basic)</p>
+                </div>
+            </div>
+
+            <div class="mt-16 bg-white/5 p-8 rounded-[32px] border border-white/5">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="px-6 py-2 bg-slate-800 border border-white/10 rounded-full text-sm font-semibold text-sky-400">Public Speaking</span>
+                    <span class="px-6 py-2 bg-slate-800 border border-white/10 rounded-full text-sm font-semibold text-sky-400">Leadership</span>
+                    <span class="px-6 py-2 bg-slate-800 border border-white/10 rounded-full text-sm font-semibold text-sky-400">Kerja Tim</span>
+                    <span class="px-6 py-2 bg-slate-800 border border-white/10 rounded-full text-sm font-semibold text-sky-400">Manajemen Waktu</span>
+                    <span class="px-6 py-2 bg-slate-800 border border-white/10 rounded-full text-sm font-semibold text-sky-400">Adaptasi Cepat</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0f172a] border-t border-white/5 py-16 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 mb-12">
+                <div>
+                    <h3 class="text-2xl font-bold accent-text mb-4">Amalia Putri</h3>
+                    <p class="text-slate-400 max-w-sm mb-6">Aktif belajar dan eksplorasi teknologi dengan bantuan tools & AI. Terbuka terhadap feedback dan peluang baru.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://putriajaya7-png.github.io/" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-sky-500 transition-colors">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="mailto:emailanda@gmail.com" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-sky-500 transition-colors">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold mb-4 text-white uppercase text-xs tracking-widest">Navigasi</h4>
+                        <ul class="space-y-2 text-slate-400 text-sm">
+                            <li><a href="#home" class="hover:text-sky-400">Beranda</a></li>
+                            <li><a href="#about" class="hover:text-sky-400">Tentang</a></li>
+                            <li><a href="#projects" class="hover:text-sky-400">Proyek</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4 text-white uppercase text-xs tracking-widest">Kontak</h4>
+                        <ul class="space-y-2 text-slate-400 text-sm">
+                            <li>Batam, Kepulauan Riau</li>
+                            <li>[No. HP]</li>
+                            <li>[Email]</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 text-center text-slate-500 text-xs">
+                <p>&copy; 2024 Amalia Putri . Dibuat dengan semangat & teknologi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth reveal on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = "0";
+            section.style.transform = "translateY(20px)";
+            section.style.transition = "all 0.8s ease-out";
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
