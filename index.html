@@ -142,11 +142,11 @@
                     Siswi Rekayasa Perangkat Lunak di SMK Negeri 4 Batam yang antusias terhadap teknologi, pengembangan web, dan IoT.
                 </p>
                 <div class="flex flex-wrap justify-center md:justify-start gap-4">
-                    <a href="https://putriajaya7-png.github.io/" target="_blank" class="px-8 py-3 bg-sky-500 text-white rounded-xl font-semibold hover:bg-sky-600 transition-all shadow-lg shadow-sky-500/20">
-                        GitHub Profile
-                    </a>
-                    <a href="#projects" class="px-8 py-3 bg-slate-800 text-white border border-white/10 rounded-xl font-semibold hover:bg-slate-700 transition-all">
+                    <a href="#projects" class="px-8 py-3 bg-sky-500 text-white rounded-xl font-semibold hover:bg-sky-600 transition-all shadow-lg shadow-sky-500/20">
                         Lihat Karya
+                    </a>
+                    <a href="#about" class="px-8 py-3 bg-slate-800 text-white border border-white/10 rounded-xl font-semibold hover:bg-slate-700 transition-all">
+                        Tentang Saya
                     </a>
                 </div>
             </div>
@@ -155,7 +155,6 @@
             <div class="order-1 md:order-2 flex justify-center">
                 <div class="profile-img-container">
                     <div class="w-64 h-64 md:w-80 md:h-80 rounded-[24px] overflow-hidden bg-slate-800 border-4 border-slate-700">
-                        <!-- Ganti URL di src dengan link foto aslimu -->
                         <img src="https://i.ibb.co/bMhc7TXX/Whats-App-Image-2026-05-05-at-20-20-57.jpg" 
                              alt="Amalia Putri" 
                              class="w-full h-full object-cover"
@@ -360,9 +359,6 @@
                     <h3 class="text-2xl font-bold accent-text mb-4">Amalia Putri</h3>
                     <p class="text-slate-400 max-w-sm mb-6">Aktif belajar dan eksplorasi teknologi dengan bantuan tools & AI. Terbuka terhadap feedback dan peluang baru.</p>
                     <div class="flex space-x-4">
-                        <a href="https://putriajaya7-png.github.io/" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-sky-500 transition-colors">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
                         <a href="mailto:emailanda@gmail.com" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-sky-500 transition-colors">
                             <i class="fa-solid fa-envelope"></i>
                         </a>
@@ -388,7 +384,7 @@
                 </div>
             </div>
             <div class="pt-8 border-t border-white/5 text-center text-slate-500 text-xs">
-                <p>&copy; 2024 Amalia Putri . Dibuat dengan semangat & teknologi.</p>
+                <p>&copy; 2024 Amalia Putri. Dibuat dengan semangat & teknologi.</p>
             </div>
         </div>
     </footer>
@@ -399,7 +395,6 @@
             menu.classList.toggle('hidden');
         }
 
-        // Smooth reveal on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
